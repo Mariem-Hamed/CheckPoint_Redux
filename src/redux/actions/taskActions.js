@@ -1,6 +1,5 @@
 import {
   ADD_TASK,
-  DELETE_TASK,
   SET_CURRENT_TASK,
   TOGGLE_COMPLETED_TASK,
   UPDATE_TASK,
@@ -16,11 +15,6 @@ export const addTask = (payload) => {
 //update
 export const updateTask = (payload) => {
   return { type: UPDATE_TASK, payload };
-};
-
-//delete
-export const deleteTask = (id) => {
-  return { type: DELETE_TASK, payload: id };
 };
 
 //current

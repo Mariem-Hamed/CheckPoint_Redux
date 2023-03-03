@@ -1,8 +1,8 @@
-import { React, useState } from "react";
-import { addTask } from "../../redux/actions/taskActions";
+import React, { useState } from "react";
+import { addTask, filterTasks } from "../../redux/actions/taskActions";
 import { useDispatch } from "react-redux";
 
-const addTask = () => {
+const AddTask = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
   const onAddClicked = () => {
@@ -12,7 +12,7 @@ const addTask = () => {
       setText("");
     }
   };
-  const onFilter = dispatch(filterTask);
+  const onFilter = dispatch(filterTasks);
   return (
     <div>
       <div className="input-group mb-2">
@@ -61,4 +61,4 @@ const addTask = () => {
   );
 };
 
-export default addTask;
+export default AddTask;

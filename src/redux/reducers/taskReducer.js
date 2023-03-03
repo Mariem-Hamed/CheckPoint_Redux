@@ -1,4 +1,8 @@
 import { ADD_TASK } from "../actions/types";
+import { SET_CURRENT_TASK } from "../actions/types";
+import { UPDATE_TASK } from "../actions/types";
+import { TOGGLE_COMPLETED_TASK } from "../actions/types";
+
 const initialState = {
   todos: [],
   current: null,
@@ -28,13 +32,6 @@ const taskReducer = (state = initialState, { type, payload }) => {
             : todo
         ),
       };
-
-    case DELETE_TASK:
-      return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.id !== payload),
-      };
-
     case TOGGLE_COMPLETED_TASK:
       return {
         ...state,
